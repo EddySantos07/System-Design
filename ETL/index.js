@@ -6,6 +6,10 @@ const ReadQuestionFiles = require("./ReadFiles/ReadFiles");
 
 const ResolveData = require("./ResolveData/ResolveData");
 
+const AwaitNextCall = require("./AwaitNextCall/AwaitNextCall");
+
+const GetIDs = require("./GetIDs/GetIDs");
+
 async function init() {
   /* makes csv into multiple smaller csv files */
   // const Make_CSV = await MakeCsv();
@@ -19,11 +23,15 @@ async function init() {
   const data = await ResolveData(result);
 
   if (data.length > 1) {
-
-    
-
+    /*  
+    AwaitNextCall 
+      takes a cb - GetIDs
+      the original dataset - [[data],[data],[data],[data]]
+      a starting index - 0 
+      and how big of a chunk to insert into db - 100000 - documents
+    */
+    AwaitNextCall(GetIDs, data, 0, 100000);
   }
-
 }
 
 init();
