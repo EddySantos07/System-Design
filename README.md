@@ -8,4 +8,4 @@ System Design is a way to automate 2+ mil csv's and add it to a MongoDB database
 
 As well as stress test and optomize routes!
 
-This project also serves data to the front end of another project - [a link](https://github.com/FEC-VITREAIS/ZLESTKCK) 
+This project also serves data to the front end of another project - [ZLESTKCK mock Ecommerce](https://github.com/FEC-VITREAIS/ZLESTKCK) 
