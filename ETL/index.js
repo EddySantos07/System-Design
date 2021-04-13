@@ -4,21 +4,26 @@ const MakeCsv = require("./MakeCsv/MakeCsv");
 
 const ReadQuestionFiles = require("./ReadFiles/ReadFiles");
 
-const DispatchData = require("./DispatchData/DispatchData");
+const ResolveData = require("./ResolveData/ResolveData");
 
 async function init() {
   /* makes csv into multiple smaller csv files */
-  const Make_CSV = await MakeCsv();
-
-  /* grabs questions headers */
-  // const CsvHeaders = await GetHeaders();
+  // const Make_CSV = await MakeCsv();
 
   /* this gives us 1mil+ data that we can work with */
-  // const result = ReadQuestionFiles();
+  const result = await ReadQuestionFiles();
 
-  // Promise.all(result).then((data) => {
-  //   console.log(data)
-  // });
+  /* grabbing promise data from the read file in the
+   result it contains 1mil + csv data to resolve in 4 different arrays 
+  */
+  const data = await ResolveData(result);
+
+  if (data.length > 1) {
+
+    
+
+  }
+
 }
 
-init()
+init();

@@ -1,3 +1,5 @@
+const csv = require("csvtojson");
+
 module.exports = ReadFiles = async () => {
   // returns 4 promises with all the data
   let data = [];
@@ -7,7 +9,7 @@ module.exports = ReadFiles = async () => {
       new Promise((resolve, reject) => {
         csv()
           .fromFile(
-            `${__dirname}../../CSVBreakDown/csv-questions/questions${i}.csv`
+            `${__dirname}/../../CSVBreakDown/csv-questions/questions${i}.csv`
           )
           .then((obj) => {
             resolve(obj);
